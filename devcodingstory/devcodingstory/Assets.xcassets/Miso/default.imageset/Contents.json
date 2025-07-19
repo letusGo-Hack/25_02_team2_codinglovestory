@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Miso_Default.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
