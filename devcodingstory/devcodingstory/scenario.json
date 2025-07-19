@@ -174,7 +174,7 @@
           "id": "3-1",
           "type": "dialogue",
           "character": "narrator",
-          "text": "프로젝트 마감일이 다가왔습니다. 미소와 많은 시간을 함께 보냈죠.",
+          "text": "미소가 플레이어의 커밋 메시지를 보고 웃음 메시지: // For Juhyuk. You’re not alone in this branch.",
           "nextScene": "3-2"
         },
         {

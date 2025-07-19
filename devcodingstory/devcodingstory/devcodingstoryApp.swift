@@ -11,7 +11,8 @@ import SwiftUI
 struct devcodingstoryApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            //MainView()
+            Chapter3View()
         }
     }
 }
