@@ -147,4 +147,28 @@ class ScenarioManager: ObservableObject {
         guard let emotion = emotion else { return "default" }
         return "Miso/\(emotion)"
     }
-} 
+
+    // MARK: - 챕터 변경
+    func changeChapter(to chapterNumber: Int) {
+        guard let scenario = scenario else {
+            print("Scenario is not loaded")
+            return
+        }
+
+        guard chapterNumber > 0 && chapterNumber <= scenario.chapters.count else {
+            print("Invalid chapter number: \(chapterNumber)")
+            return
+        }
+
+        currentChapter = chapterNumber
+        let chapter = scenario.chapters[chapterNumber - 1]
+
+        if let firstScene = chapter.scenes.first {
+            currentScene = firstScene
+            print("Changed to Chapter \(chapterNumber)")
+        } else {
+            print("Chapter \(chapterNumber) has no scenes")
+        }
+    }
+
+}
