@@ -121,6 +121,6 @@ iOSInjectionProject/
 ### Xcode Project File ###
 # WARNING: This is NOT recommended! project.pbxproj contains essential project configuration
 # Only add this if you have a specific reason (e.g., personal solo project)
-*.pbxproj
+# *.pbxproj
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,macos
