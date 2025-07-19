@@ -22,7 +22,7 @@ public struct Talk: Identifiable {
     
     /// Name of the image asset
     @Guide(description: "Determines the ImageName enum case based on the response text content")
-    let imageName: ImageName
+    public let imageName: ImageName
 
     /// SwiftUI Image for the asset
     public var image: Image {
@@ -30,7 +30,7 @@ public struct Talk: Identifiable {
     }
     
     @Generable
-    enum ImageName: String {
+    public enum ImageName: String {
         case angry, bad, coding, crying, `default`, goodEnding, smile1, smile2, smile3
     }
 }
