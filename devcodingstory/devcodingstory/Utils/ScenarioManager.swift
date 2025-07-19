@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 class ScenarioManager: ObservableObject {
     static let shared = ScenarioManager()
