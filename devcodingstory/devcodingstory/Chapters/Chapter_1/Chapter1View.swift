@@ -41,7 +41,7 @@ struct Chapter1View: View {
 
 // MARK: - 씬 뷰
 struct SceneView: View {
-    let scene: Scene
+    let scene: GameScene
     @StateObject private var scenarioManager = ScenarioManager.shared
     
     var body: some View {

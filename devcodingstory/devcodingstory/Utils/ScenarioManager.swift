@@ -13,7 +13,7 @@ class ScenarioManager: ObservableObject {
     static let shared = ScenarioManager()
     
     @Published var scenario: GameScenario?
-    @Published var currentScene: Scene?
+    @Published var currentScene: GameScene?
     @Published var currentChapter: Int = 1
     @Published var affectionLevel: Int = 0
     @Published var gameEnded: Bool = false
@@ -71,7 +71,7 @@ class ScenarioManager: ObservableObject {
     }
     
     // MARK: - 씬 찾기
-    func findScene(id: String) -> Scene? {
+    func findScene(id: String) -> GameScene? {
         for chapter in scenario?.chapters ?? [] {
             if let scene = chapter.scenes.first(where: { $0.id == id }) {
                 return scene

@@ -35,11 +35,11 @@ struct Character: Codable {
 struct Chapter: Codable {
     let id: Int
     let title: String
-    let scenes: [Scene]
+    let scenes: [GameScene]
 }
 
 // MARK: - 씬 (대화 또는 선택지)
-struct Scene: Codable {
+struct GameScene: Codable {
     let id: String
     let type: SceneType
     let character: String?
@@ -67,7 +67,7 @@ struct Ending: Codable {
     let id: String
     let title: String
     let requiredAffection: Int
-    let scene: Scene
+    let scene: GameScene
 }
 
 // MARK: - 엔딩 타입 Enum
