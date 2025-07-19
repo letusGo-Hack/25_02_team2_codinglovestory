@@ -13,7 +13,7 @@ struct MainView: View {
             VStack {
                 Spacer()
                 
-                NavigationLink(destination: Chapter2View()) {
+                NavigationLink(destination: Chapter1View()) {
                     Image("Title")
                         .resizable()
                         .aspectRatio(contentMode: .fit)

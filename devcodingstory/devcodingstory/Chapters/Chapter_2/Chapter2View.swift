@@ -72,91 +72,91 @@ struct Chapter2View: View {
     }
 }
 
-// 1. 이미지 영역
-struct ImageSectionView: View {
-    let image: Image
-    
-    var body: some View {
-        image
-            .resizable()
-            .scaledToFill()
-            .background(Color.black)
-            .clipped()
-    }
-}
-
-// 2. 말풍선(텍스트) 영역
-struct DialogueSectionView: View {
-    let text: String
-    
-    var body: some View {
-        VStack {
-            Text(text)
-                .font(.body)
-                .padding(16)
-                .background(
-                    RoundedRectangle(cornerRadius: 16)
-                        .fill(Color.white)
-                        .shadow(color: .black.opacity(0.15), radius: 6, x: 0, y: 2)
-                )
-                .overlay(
-                    RoundedRectangle(cornerRadius: 16)
-                        .stroke(Color.gray.opacity(0.5), lineWidth: 2)
-                )
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-        }
-        .padding(.horizontal, 12)
-        .background(Color(.systemGray6))
-    }
-}
-
-// 3. 입력창 영역
-struct InputSectionView: View {
-    @Binding var inputText: String
-    var isLoading: Bool = false
-    var onSend: (String) -> Void
-
-    init(inputText: Binding<String>, isLoading: Bool = false, onSend: @escaping (String) -> Void = { _ in }) {
-        self._inputText = inputText
-        self.isLoading = isLoading
-        self.onSend = onSend
-    }
-
-    var body: some View {
-        HStack(spacing: 8) {
-            TextField("내 대사 입력...", text: $inputText)
-                .padding(10)
-                .background(
-                    RoundedRectangle(cornerRadius: 16)
-                        .fill(Color(.systemGray6))
-                )
-                .font(.body)
-                .frame(height: 60)
-            Button(action: {
-                let text = inputText
-                if !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                    print("입력 : \(text)")
-                    onSend(text)
-                    inputText = ""
-                }
-            }) {
-                Image(systemName: isLoading ? "hourglass" : "arrow.up.circle.fill")
-                    .resizable()
-                    .frame(width: 36, height: 36)
-                    .foregroundColor(.blue)
-            }
-            .frame(height: 60)
-            .disabled(isLoading)
-        }
-        .padding(.horizontal, 16)
-        .padding(.bottom, 8)
-        .frame(height: 60)
-        .overlay(
-            Rectangle()
-                .stroke(Color.gray.opacity(0.5), lineWidth: 2)
-        )
-    }
-}
+//// 1. 이미지 영역
+//struct ImageSectionView: View {
+//    let image: Image
+//    
+//    var body: some View {
+//        image
+//            .resizable()
+//            .scaledToFill()
+//            .background(Color.black)
+//            .clipped()
+//    }
+//}
+//
+//// 2. 말풍선(텍스트) 영역
+//struct DialogueSectionView: View {
+//    let text: String
+//    
+//    var body: some View {
+//        VStack {
+//            Text(text)
+//                .font(.body)
+//                .padding(16)
+//                .background(
+//                    RoundedRectangle(cornerRadius: 16)
+//                        .fill(Color.white)
+//                        .shadow(color: .black.opacity(0.15), radius: 6, x: 0, y: 2)
+//                )
+//                .overlay(
+//                    RoundedRectangle(cornerRadius: 16)
+//                        .stroke(Color.gray.opacity(0.5), lineWidth: 2)
+//                )
+//                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+//        }
+//        .padding(.horizontal, 12)
+//        .background(Color(.systemGray6))
+//    }
+//}
+//
+//// 3. 입력창 영역
+//struct InputSectionView: View {
+//    @Binding var inputText: String
+//    var isLoading: Bool = false
+//    var onSend: (String) -> Void
+//
+//    init(inputText: Binding<String>, isLoading: Bool = false, onSend: @escaping (String) -> Void = { _ in }) {
+//        self._inputText = inputText
+//        self.isLoading = isLoading
+//        self.onSend = onSend
+//    }
+//
+//    var body: some View {
+//        HStack(spacing: 8) {
+//            TextField("내 대사 입력...", text: $inputText)
+//                .padding(10)
+//                .background(
+//                    RoundedRectangle(cornerRadius: 16)
+//                        .fill(Color(.systemGray6))
+//                )
+//                .font(.body)
+//                .frame(height: 60)
+//            Button(action: {
+//                let text = inputText
+//                if !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+//                    print("입력 : \(text)")
+//                    onSend(text)
+//                    inputText = ""
+//                }
+//            }) {
+//                Image(systemName: isLoading ? "hourglass" : "arrow.up.circle.fill")
+//                    .resizable()
+//                    .frame(width: 36, height: 36)
+//                    .foregroundColor(.blue)
+//            }
+//            .frame(height: 60)
+//            .disabled(isLoading)
+//        }
+//        .padding(.horizontal, 16)
+//        .padding(.bottom, 8)
+//        .frame(height: 60)
+//        .overlay(
+//            Rectangle()
+//                .stroke(Color.gray.opacity(0.5), lineWidth: 2)
+//        )
+//    }
+//}
 
 #Preview {
     Chapter2View()
