@@ -11,6 +11,10 @@ import FoundationModels
 final class ConversationService {
     static let shared = ConversationService()
     
+    private init() {
+        session.prewarm()
+    }
+    
     lazy var session: LanguageModelSession = {
         guard let instructions = FileReader.readScenarioText() else {
             preconditionFailure("instructions not found")
